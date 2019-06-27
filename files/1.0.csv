@@ -1,0 +1,17 @@
+Parameter,JTIMON,iAgent
+Scale,4k IFL,4k IFL
+Sensor Frequency,20 sec,300 sec
+Trigger Frequency,40 sec,600 sec
+No. of Fields,3,3
+No. of Devices,2500,600
+No. of Device groups,500,12
+No. of Devices per DG,50,50
+Monitoring Duration,3 days,3 days
+Total RAM usage,127 GB,191 GB
+Ingest RAM per DG,1.28 GB,12.7 GB
+Analytical Engine RAM per DG,457 MB,476 MB
+Issues found & fixed,Memory leak on 3rd day of execution,Nil
+Improvements,"With TAND, the RAM usage is reduced by close to 40%.","With TAND, we are now able to support 100 more devices (earlier it was 500).
+This is due to saving in RAM and comparatively less CPU usage"
+Notes,"Though we have resources to scale further, we hit influx db bottle neck.
+Beyond this, influxdb write fails and becomes unstable",None

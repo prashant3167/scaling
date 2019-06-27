@@ -1,0 +1,304 @@
+<html class="no-js">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src='./javascript/dir.php'></script>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script> -->
+    <script src="javascript/modernizr.js"></script>
+  <script>
+		var d={};
+	function abc(file){
+		 d3.text(file,function(data) {
+				d[file] = d3.csv.parseRows(data);
+				// console.log(parsedCSV);
+			});
+	}
+  async function get_all_files()
+{
+  document.getElementsByClassName("versions")[0].style.display="none";
+  document.getElementsByClassName("HealthBot_Version")[0].style.display="none";
+  document.getElementsByClassName("Compare")[0].style.display="none";
+	document.getElementsByClassName("Details")[0].style.display="block";
+	document.getElementsByClassName("Compare_div")[0].style.display="block";
+	document.getElementsByTagName.
+
+	for (var i=0;i<files.length;i++)
+		{
+			var file = "files/" + files[i] + ".csv";
+			abc(file);
+			
+		}
+}
+  </script>
+</head>
+
+<body>
+    <div class="versions">
+        <label for="classic">
+            <h4>HealthBot Version</h4>
+        </label>
+        <select class="classic" onchange="select_trigger()">
+        </select>
+        <br>
+        <br>
+        
+    </div>
+
+        <table class="HealthBot_Version" id="exceltable">
+        </table>
+    <div class="button Compare" style="position:absolute;right:3rem;top:1rem" onclick="alert('clicked');">Compare</div>
+    <div class="button Details" style="position:absolute;right:3rem;top:1rem;display: none" onclick="alert('clicked');">Details</div>
+		<div class="Compare_div" style="display:none">
+		<label for="Comparison">Select Version for Comparison</label>
+    <div class="Comparison">
+    </div>
+    <div class="button" style="position:absolute;right:3rem">Filter</div>
+    <table id="CompareTable"></table>
+    <section class="cd-products-comparison-table">
+
+    <div class="cd-products-table">
+			<div class="features">
+				<div class="top-info">Models</div>
+				<ul class="cd-features-list">
+					<li>Price</li>
+					<li>Customer Rating</li>
+					<li>Resolution</li>
+					<li>Screen Type</li>
+					<li>Display Size</li>
+					<li>Refresh Rate</li>
+					<li>Model Year</li>
+					<li>Tuner Technology</li>
+					<li>Ethernet Input</li>
+					<li>USB Input</li>
+					<li>Scart Input</li>
+				</ul>
+			</div> <!-- .features -->
+			
+			<div class="cd-products-wrapper">
+				<ul class="cd-products-columns">
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check">prashant</div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+
+					<li class="product">
+						<div class="top-info">
+<!--							<div class="check"></div>-->
+<!--							<img src="img/product.png" alt="product image">-->
+							<h3>Sumsung Series 6 J6300</h3>
+						</div> <!-- .top-info -->
+
+						<ul class="cd-features-list">
+							<li>$600</li>
+							<li class="rate"><span>5/5</span></li>
+							<li>1080p</li>
+							<li>LED</li>
+							<li>47.6 inches</li>
+							<li>800Hz</li>
+							<li>2015</li>
+							<li>mpeg4</li>
+							<li>1 Side</li>
+							<li>3 Port</li>
+							<li>1 Rear</li>
+						</ul>
+					</li> <!-- .product -->
+				</ul> <!-- .cd-products-columns -->
+			</div> <!-- .cd-products-wrapper -->
+			
+			<ul class="cd-table-navigation">
+				<li><a href="#0" class="prev inactive">Prev</a></li>
+				<li><a href="#0" class="next">Next</a></li>
+			</ul>
+		</div> <!-- .cd-products-table -->
+	</section> <!-- .cd-products-comparison-table -->
+	</div>
+  </html>
+    <script src="./javascript/get_table.js"></script>
+
+<script src="./javascript/get_version.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+<script>
+var button = document.querySelector('.button');
+
+button.onclick = function () {
+  get_all_files();
+  window.scrollTo(0,document.body.scrollHeight);
+ var red = Math.floor(Math.random() * 256);
+ var blue = Math.floor(Math.random() * 256);
+ var green = Math.floor(Math.random() * 256);
+
+ this.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+};
+
+
+// Math.floor(Math.random() * 256) [0-255]
+// rgb(255,255,255)
+</script>
+<script src="javascript/jquery-2.1.4.js"></script>
+<script src="javascript/main.js"></script>
+</body>
+
+
+
+</html>
+
+<script src="./javascript/jquery.stickyheader.js"></script>
