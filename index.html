@@ -16,11 +16,26 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script> -->
     <script src="javascript/modernizr.js"></script>
   <script>
+      function transpose(matrix) {
+  return matrix[0].map((col, i) => matrix.map(row => row[i]));
+}
 		var d={};
 	function abc(file){
 		 d3.text(file,function(data) {
-				d[file] = d3.csv.parseRows(data);
+				d[file] = transpose(d3.csv.parseRows(data));
 				// console.log(parsedCSV);
+              if($.trim( $('.cd-products-table .features .cd-features-list').text() ).length == 0)
+        {
+    let parameters=d[file];
+    parameters=parameters[0].slice(1,);
+
+            d3.select(".features ul")
+                .selectAll("li")
+                .data(parameters)
+                .enter()
+                .append("li")
+                .text(function(d) { return d; });
+        }
 			});
 	}
   async function get_all_files()
@@ -30,14 +45,15 @@
   document.getElementsByClassName("Compare")[0].style.display="none";
 	document.getElementsByClassName("Details")[0].style.display="block";
 	document.getElementsByClassName("Compare_div")[0].style.display="block";
-	document.getElementsByTagName.
+	document.getElementsByTagName("HTML")[0].style.fontSize="75%";
 
-	for (var i=0;i<files.length;i++)
+	for (let i=0;i<files.length;i++)
 		{
-			var file = "files/" + files[i] + ".csv";
+			let file = "files/" + files[i] + ".csv";
 			abc(file);
-			
 		}
+    let key=Object.keys(d);
+
 }
   </script>
 </head>
@@ -68,19 +84,8 @@
 
     <div class="cd-products-table">
 			<div class="features">
-				<div class="top-info">Models</div>
+				<div class="top-info">Parameters</div>
 				<ul class="cd-features-list">
-					<li>Price</li>
-					<li>Customer Rating</li>
-					<li>Resolution</li>
-					<li>Screen Type</li>
-					<li>Display Size</li>
-					<li>Refresh Rate</li>
-					<li>Model Year</li>
-					<li>Tuner Technology</li>
-					<li>Ethernet Input</li>
-					<li>USB Input</li>
-					<li>Scart Input</li>
 				</ul>
 			</div> <!-- .features -->
 			
@@ -88,7 +93,7 @@
 				<ul class="cd-products-columns">
 					<li class="product">
 						<div class="top-info">
-<!--							<div class="check"></div>-->
+							<div class="check"></div>
 <!--							<img src="img/product.png" alt="product image">-->
 							<h3>Sumsung Series 6 J6300</h3>
 						</div> <!-- .top-info -->
@@ -271,7 +276,6 @@
 		</div> <!-- .cd-products-table -->
 	</section> <!-- .cd-products-comparison-table -->
 	</div>
-  </html>
     <script src="./javascript/get_table.js"></script>
 
 <script src="./javascript/get_version.js"></script>
