@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 		this.productWidth = this.products.eq(0).width();
 		this.productsTopInfo = this.table.find('.top-info');
 		this.featuresTopInfo = this.table.children('.features').children('.top-info');
-		this.topInfoHeight = this.featuresTopInfo.innerHeight();
+		this.topInfoHeight = this.featuresTopInfo.innerHeight() + 30;
 		this.leftScrolling = false;
 		this.filterBtn = this.element.find('.filter');
 		this.resetBtn = this.element.find('.reset');
@@ -112,7 +112,7 @@ jQuery(document).ready(function($){
 		
 		if ( offsetTop <= scrollTop && offsetTop + this.tableHeight - this.topInfoHeight >= scrollTop ) {
 			//fix products top-info && arrows navigation
-			if( !this.table.hasClass('top-fixed') && $(document).height() > offsetTop + $(window).height()) { 
+			if( !this.table.hasClass('top-fixed') && $(document).height() > offsetTop + $(window).height() + 200) {
 				this.table.addClass('top-fixed').removeClass('top-scrolling');
 				if( checkMQ() == 'desktop' ) {
 					this.productsTopInfo.css('top', '0');
@@ -131,7 +131,7 @@ jQuery(document).ready(function($){
 			//product top-info && arrows navigation -  reset style
 			this.table.removeClass('top-fixed top-scrolling');
 			this.productsTopInfo.attr('style', '');
-//			this.navigation.find('a').attr('style', '');
+			this.navigation.find('a').attr('style', '');
 		}
 
 		this.updateLeftScrolling();
@@ -140,7 +140,7 @@ jQuery(document).ready(function($){
 	productsTable.prototype.updateProperties = function() {
 		this.tableHeight = this.table.height();
 		this.productWidth = this.products.eq(0).width();
-		this.topInfoHeight = this.featuresTopInfo.innerHeight();
+		this.topInfoHeight = this.featuresTopInfo.innerHeight() + 30;
 		this.tableColumns.css('width', this.productWidth*this.productsNumber + 'px');
 	}
 
@@ -278,11 +278,11 @@ jQuery(document).ready(function($){
 
 	function setTranformX(element, value) {
 		element.css({
-//		    '-moz-transform': 'translateX(' + value + 'px)',
-//		    '-webkit-transform': 'translateX(' + value + 'px)',
-//			'-ms-transform': 'translateX(' + value + 'px)',
-//			'-o-transform': 'translateX(' + value + 'px)',
-//			'transform': 'translateX(' + value + 'px)'
+		    '-moz-transform': 'translateX(' + value + 'px)',
+		    '-webkit-transform': 'translateX(' + value + 'px)',
+			'-ms-transform': 'translateX(' + value + 'px)',
+			'-o-transform': 'translateX(' + value + 'px)',
+			'transform': 'translateX(' + value + 'px)'
 		});
 	}
 });
