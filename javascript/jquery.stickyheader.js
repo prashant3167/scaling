@@ -149,13 +149,4 @@ window.onload = function(){
 			.scroll($.throttle(250, repositionStickyHead));
 		}
 	});
-var classname = document.getElementsByClassName("options");
-alert("prashant");
-function changecolor()
-{
-	alert("Prashant");
-}
-for (var i = 0; i < classname.length; i++) {
-    classname[i].addEventListener('click', changecolor, false);
-}
 }

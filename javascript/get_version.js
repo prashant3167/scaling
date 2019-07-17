@@ -17,33 +17,32 @@ function get_version() {
                 div_option.setAttribute("class", 'options');
                 var text = document.createTextNode("HB "+version_list[version]);
                 div_option.appendChild(text);
-                document.getElementsByClassName("Comparison")[0].appendChild(div_option);
+//                document.getElementsByClassName("Comparison")[0].appendChild(div_option);
             }
     }
     var classname = document.getElementsByClassName("options");
-    // alert("prashant");
-    function changecolor()
-    {
-        if($("div[id*='selected']").length>1)
-        {
-            // compare_files();
-        }
-        console.log($(this).css('background-color'));
-        if($(this).css('background-color')=='rgb(46, 168, 121)'){
-        $(this).css('background-color', 'black');
-        console.log($(this).css('background-color'));
-        $(this).attr('id','selected');
-        }
-        else
-        {
-            $(this).css('background-color', 'rgb(46, 168, 121)');
-            $(this).attr('id','');
-        }
-    }
-    for (var i = 0; i < classname.length; i++) {
-        classname[i].addEventListener('click', changecolor, false);
-        // classname[i].addEventListener('mos')
-    }
+    // function changecolor()
+    // {
+    //     if($("div[id*='selected']").length>1)
+    //     {
+    //         // compare_files();
+    //     }
+    //     console.log($(this).css('background-color'));
+    //     if($(this).css('background-color')=='rgb(46, 168, 121)'){
+    //     $(this).css('background-color', 'black');
+    //     console.log($(this).css('background-color'));
+    //     $(this).attr('id','selected');
+    //     }
+    //     else
+    //     {
+    //         $(this).css('background-color', 'rgb(46, 168, 121)');
+    //         $(this).attr('id','');
+    //     }
+    // }
+    // for (var i = 0; i < classname.length; i++) {
+    //     classname[i].addEventListener('click', changecolor, false);
+    //     // classname[i].addEventListener('mos')
+    // }
 }
 get_version();
 get_table('files/2.0.csv')

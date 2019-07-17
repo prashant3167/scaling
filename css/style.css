@@ -8,7 +8,7 @@ Primary style
 }
 
 .cd-products-comparison-table {
-  font-size: 62.5% !important;
+  /* font-size: 62.5% !important; */
 }
 
 /* body {
@@ -96,6 +96,8 @@ Main Components
 @media only screen and (min-width: 1170px) {
   .cd-products-comparison-table {
     margin-bottom: 8em;
+    margin-top: 4.5rem;
+
   }
   .cd-products-comparison-table::after {
     /* never visible - this is used in jQuery to check the current MQ */
@@ -266,12 +268,12 @@ Main Components
   }
 }
 
-.features .cd-features-list li {
+/* .features .cd-features-list li { */
   /* truncate text with dots */
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+  /* white-space: nowrap; */
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+/* } */
 
 .cd-products-table .top-info {
   position: relative;
@@ -352,7 +354,7 @@ Main Components
 }
 @media only screen and (min-width: 1170px) {
   .cd-products-table .top-info {
-    height: 280px;
+    height: 158px;
     width: 310px;
   }
   .cd-products-table .top-info h3 {
@@ -581,4 +583,10 @@ No JS
 
 .no-js .cd-products-columns .check {
   display: none;
+}
+
+select {
+  margin-top: 1rem !important;
+  width: 100px;
+  height: 39px;
 }

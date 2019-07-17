@@ -4,4 +4,3 @@ foreach (glob('../files/*.csv') as $filename) {
     $out[] = $p['filename'];
 }
 echo json_encode($out); ?>;
-console.log(files);

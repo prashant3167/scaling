@@ -13,7 +13,6 @@ async function get_table(file_name){
                         .data(ab).enter()
 			.append("th")	
                         .text(function(d) { return d; });
-                        // alert(.data(parsedCSV))
 	var col_1=[];
 	for( var i=0;i<parsedCSV.length;i++)
 	{

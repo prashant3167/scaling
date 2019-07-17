@@ -11,11 +11,11 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script> -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script> -->
-    <script src="javascript/modernizr.js"></script>
+	<script src="javascript/modernizr.js"></script>
+	<script src="javascript/insert.js"></script>
   <script>
+
       function transpose(matrix) {
   return matrix[0].map((col, i) => matrix.map(row => row[i]));
 }
@@ -24,6 +24,8 @@
 		 d3.text(file,function(data) {
 				d[file] = transpose(d3.csv.parseRows(data));
 				// console.log(parsedCSV);
+				insert_compare(d[file],file);
+
               if($.trim( $('.cd-products-table .features .cd-features-list').text() ).length == 0)
         {
     let parameters=d[file];
@@ -37,13 +39,14 @@
                 .text(function(d) { return d; });
         }
 			});
+			
 	}
   async function get_all_files()
 {
   document.getElementsByClassName("versions")[0].style.display="none";
   document.getElementsByClassName("HealthBot_Version")[0].style.display="none";
   document.getElementsByClassName("Compare")[0].style.display="none";
-	document.getElementsByClassName("Details")[0].style.display="block";
+//	document.getElementsByClassName("Details")[0].style.display="block";
 	document.getElementsByClassName("Compare_div")[0].style.display="block";
 	document.getElementsByTagName("HTML")[0].style.fontSize="75%";
 
@@ -52,8 +55,9 @@
 			let file = "files/" + files[i] + ".csv";
 			abc(file);
 		}
-    let key=Object.keys(d);
 
+	// let key=Object.keys(d);
+	// insert_compare();
 }
   </script>
 </head>
@@ -61,7 +65,7 @@
 <body>
     <div class="versions">
         <label for="classic">
-            <h4>HealthBot Version</h4>
+            <h2>HealthBot Version</h2>
         </label>
         <select class="classic" onchange="select_trigger()">
         </select>
@@ -72,8 +76,7 @@
 
         <table class="HealthBot_Version" id="exceltable">
         </table>
-    <div class="button Compare" style="position:absolute;right:3rem;top:1rem" onclick="alert('clicked');">Compare</div>
-    <div class="button Details" style="position:absolute;right:3rem;top:1rem;display: none" onclick="alert('clicked');">Details</div>
+    <div class="button Compare" style="position:absolute;right:3rem;top:1rem">Compare</div>
 
 		<div class="Compare_div" style="display:none">
 	<!--	<label for="Comparison">Select Version for Comparison</label>
@@ -94,7 +97,7 @@
 
 		<div class="cd-products-table">
 			<div class="features">
-				<div class="top-info">Models</div>
+				<div class="top-info">Properties</div>
 				<ul class="cd-features-list">
 <!--
 					<li>Price</li>
@@ -113,183 +116,9 @@
 			</div> <!-- .features -->
 			
 			<div class="cd-products-wrapper">
-				<ul class="cd-products-columns">
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-
-					<li class="product">
-						<div class="top-info">
-							<div class="check"></div>
-							<img src="img/product.png" alt="product image">
-							<h3>Sumsung Series 6 J6300</h3>
-						</div> <!-- .top-info -->
-
-						<ul class="cd-features-list">
-							<li>$600</li>
-							<li class="rate"><span>5/5</span></li>
-							<li>1080p</li>
-							<li>LED</li>
-							<li>47.6 inches</li>
-							<li>800Hz</li>
-							<li>2015</li>
-							<li>mpeg4</li>
-							<li>1 Side</li>
-							<li>3 Port</li>
-							<li>1 Rear</li>
-						</ul>
-					</li> <!-- .product -->
-				</ul> <!-- .cd-products-columns -->
+				<table class="cd-products-columns" id="version-columns">
+					
+				</table> <!-- .cd-products-columns -->
 			</div> <!-- .cd-products-wrapper -->
 			
 			<ul class="cd-table-navigation">
@@ -309,11 +138,12 @@ var button = document.querySelector('.button');
 button.onclick = function () {
   get_all_files();
   window.scrollTo(0,document.body.scrollHeight);
- var red = Math.floor(Math.random() * 256);
- var blue = Math.floor(Math.random() * 256);
- var green = Math.floor(Math.random() * 256);
-
- this.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+ var head= document.getElementsByTagName('head')[0];
+   var script= document.createElement('script');
+   script.type= 'text/javascript';
+   script.src= 'javascript/main.js';
+   head.appendChild(script);
+//  this.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 };
 
 
@@ -321,7 +151,7 @@ button.onclick = function () {
 // rgb(255,255,255)
 </script>
 <script src="javascript/jquery-2.1.4.js"></script>
-<script src="javascript/main.js"></script>
+<!-- <script src="javascript/main.js"></script> -->
 </body>
 
 
